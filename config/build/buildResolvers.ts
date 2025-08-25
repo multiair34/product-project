@@ -1,7 +1,12 @@
-import {ResolveOptions} from "node:dns";
+import {ResolveOptions} from "webpack";
+import {BuildOptions} from "./types/config";
 
-export function buildResolvers(): { extensions: string[] } {
+export function buildResolvers(option: BuildOptions): ResolveOptions {
     return {
         extensions: ['.tsx', '.ts', '.js'],
+        preferAbsolute: true,
+        modules: [option.paths.src, "node_modules"],
+        mainFiles: ["index"],
+        alias: {}
     }
 }
