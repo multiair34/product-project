@@ -1,3 +1,4 @@
+// eslint-disable-next-line react-hooks/exhaustive-hooks
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 import {

@@ -1,3 +1,4 @@
+// eslint-disable-next-line react-hooks/exhaustive-hooks
 import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {

@@ -11,18 +11,22 @@ interface ErrorBoundaryState {
 
 class ErrorBoundary
     extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    private static error: Error;
+
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
     }
 
     static getDerivedStateFromError(error: Error) {
+        ErrorBoundary.error = error;
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // You can also log the error to an error reporting service
+        // eslint-disable-next-line no-console
         console.log(error, errorInfo);
     }
 
